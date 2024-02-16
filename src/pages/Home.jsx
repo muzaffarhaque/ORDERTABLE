@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import commonGetApi from "../server/Api";
 import { FaSearch } from "react-icons/fa";
 import { HiOutlineChevronDoubleDown } from "react-icons/hi";
-import { FaAngleLeft,FaAngleRight  } from "react-icons/fa";
+import { FaAngleLeft, FaAngleRight, FaRegEdit } from "react-icons/fa";
 import Dropdown from "react-bootstrap/Dropdown";
 import Pagination from "react-bootstrap/Pagination";
 export default function Home() {
@@ -85,7 +85,6 @@ export default function Home() {
           </button>
           <div className="paginatin-frame">
             <Pagination>
-            
               <Pagination.Item>{<FaAngleLeft />}</Pagination.Item>
               <Pagination.Item>{1}</Pagination.Item>
               <Pagination.Item>{2}</Pagination.Item>
@@ -93,32 +92,51 @@ export default function Home() {
               <Pagination.Ellipsis />
               <Pagination.Item>{10}</Pagination.Item>
               <Pagination.Item>{<FaAngleRight />}</Pagination.Item>
-           
             </Pagination>
           </div>
         </div>
         <div className="table-wrapper">
           <table>
             <thead>
-              <tr>
+              <tr className="table-hed-row">
                 <th>
-                  <input type="checkbox" name="" id="" />
-                  Id
+                  <input type="checkbox" name="" id="mainchecked" />
+                  ID
                 </th>
-                <th>
-                  SHPMENT
-                </th>
-                <th>
-                  DATE
-                </th>
-                <th>
-                  STATUS
-                </th>
-                <th>
-                  CUSTOMEL
-                </th>
+                <th>SHPMENT</th>
+                <th>DATE</th>
+                <th>STATUS</th>
+                <th>CUSTOMER</th>
+                <th>EMAIL</th>
+                <th>COUNTRY</th>
+                <th>SHIPPING</th>
+                <th>SOURSE</th>
+                <th>OOEM TYPE</th>
               </tr>
             </thead>
+            <tbody>
+              {[...Array(9)].map((item, i) => {
+                return (
+                  <tr key={i} className="table-body-row">
+                    <td>
+                      <input type="checkbox" name="" id="mainchecked" />
+                      108432
+                    </td>
+                    <td>11442</td>
+                    <td>22 Jan 2024</td>
+                    <td>Pending</td>
+                    <td>Ahmed</td>
+                    <td>haque@gmail.com</td>
+                    <td>India</td>
+                    <td>Austilain Poast Apist</td>
+                    <td>ShoplyAu</td>
+                    <td>
+                      Coustomer <FaRegEdit className="edit-icon" />
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
           </table>
         </div>
       </div>
