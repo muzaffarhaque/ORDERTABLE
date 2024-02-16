@@ -7,22 +7,27 @@ import Dropdown from "react-bootstrap/Dropdown";
 import Pagination from "react-bootstrap/Pagination";
 export default function Home() {
   const [data, setData] = useState([]);
-  async function getData() {
-    const data = await commonGetApi(
-      "https://randomuser.me/api/?page=1&results=1&seed=abc"
-    );
-    console.log(data);
-    setData(data.data);
-  }
-  useEffect(() => {
-    getData();
-  }, []);
+  // async function getData() {
+  //   const data = await commonGetApi(
+  //     "https://randomuser.me/api/?page=1&results=1&seed=abc"
+  //   );
+  //   console.log(data);
+  //   setData(data.data);
+  // }
+  // useEffect(() => {
+  //   getData();
+  // }, []);
   return (
     <section className="main-home-section">
+      {/* ======================= TABLE MAIN HEADSER START =================== */}
       <div className="header-part">
         <h3 className="fs-28-18 fw-bold">Orders</h3>
         <button className="primary-btn">Create New</button>
       </div>
+      {/* ======================= TABLE MAIN HEADSER END =================== */}
+      {/*  */}
+      {/*  */}
+      {/* ----------------------------- SUB HEADER START ------------------------ */}
       <div className="sub-header-frame">
         <div className="search-field">
           <p className="fs-18-14 fw-normal">What are you looking for?</p>
@@ -64,8 +69,11 @@ export default function Home() {
           <button className="primary-btn text-center w-100">Search</button>
         </div>
       </div>
-
+      {/* ----------------------------- SUB HEADER END ------------------------ */}
+      {/*  */}
+      {/*  */}
       <div className="main-table-frame">
+        {/* TABLE HEADER START */}
         <div className="table-header">
           <h3 className="fs-24-16 fw-bold">Product Summery</h3>
           <div className="show-column-fild fs-16-13 fw-normal">
@@ -95,6 +103,10 @@ export default function Home() {
             </Pagination>
           </div>
         </div>
+         {/* TABLE HEADER END */}
+         {/*  */}
+         {/*  */}
+         {/* TABLE CODE START  */}
         <div className="table-wrapper">
           <table>
             <thead>
@@ -139,6 +151,9 @@ export default function Home() {
             </tbody>
           </table>
         </div>
+        {/*  TABLE CODE END */}
+        {/*  */}
+        {/*  */}
       </div>
     </section>
   );
